@@ -1,3 +1,15 @@
 body{
-    background-color: red;
+    background-image: url("static/images/kangaroo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.list-group-item{
+    background-color: lightgray;
+    font-size: large;
+}
+
+.list-group-item:hover{
+    background-color: darkgrey;
+    font-size: large;
 }

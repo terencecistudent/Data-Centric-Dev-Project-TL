@@ -2,46 +2,73 @@
 {% extends 'base.html' %} 
 {% block content %}
 
+<!--Sub Heading For Page-->
 <div class="row pt-3">
-    <h2 class="text-center">Animals</h2>
+    <div class="col">
+        <h2 class="text-center">Animals</h2>
+    </div>
 </div>
+<!--Main Content-->
 <div class="row pt-3 mb-2">
     <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="row pt-3 mb-2 text-center">
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3">
+                <!--Scrollspy containing animal types-->
+                <div id="animal-type-list" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">Mammals</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Birds</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Fish</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Reptiles</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Amphibians</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Invertebrates</a>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
-        </div>
-        <div class="row pt-3 mb-2 text-center">
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <img src="static/images/elephant.jpg" alt="African Elephant" class="rounded">
-                <h5>African Elephant</h5>
-            </div>
+            <div class="col-sm-12 col-md-9 col-lg-9">
+                <!--Containing animal info-->
+                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                    {% for animal in animals %}
+                    <h4 id="list-item-1">Mammals</h4>
+                    <div class="row">
+                        <div class="col">
+                            <h2>{{ animal.elephant_name }}</h2>
+                            <p>{{ animal.elephant_diet }}</p>
+                        </div>
+                    </div>
+
+                    <h4 id="list-item-2">Birds</h4>
+                        <div class="row">
+                            <div class="col">
+                                <h2>{{ animal.eagle_name }}</h2>
+                                <h4>{{ animal.eagle_diet }}</h4>
+                            </div>
+                        </div>
+                    <h4 id="list-item-3">Fish</h4>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
+                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
+                            dignissimos atque officia rerum quis nostrum iure?
+                        </p>
+                    <h4 id="list-item-4">Reptiles</h4>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
+                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
+                            dignissimos atque officia rerum quis nostrum iure?
+                        </p>
+                    <h4 id="list-item-5">Amphibians</h4>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
+                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
+                            dignissimos atque officia rerum quis nostrum iure?
+                        </p>
+                    <h4 id="list-item-6">Invertebrates</h4>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
+                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
+                            dignissimos atque officia rerum quis nostrum iure?
+                        </p>
+                    {% endfor %}
+                </div>
+            </div> 
         </div>
     </div>
 </div>
