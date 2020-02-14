@@ -1,7 +1,6 @@
 body{
-    background-image: url("static/images/kangaroo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: lightgoldenrodyellow;
+    font-family: 'Roboto', sans-serif;
 }
 
 .list-group-item{
@@ -12,4 +11,20 @@ body{
 .list-group-item:hover{
     background-color: darkgrey;
     font-size: large;
+}
+
+.text-align-img{
+    text-align: center;
+}
+
+.margin-top{
+    margin-top: 30px;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
+.h4-text-black{
+    color:black;
 }

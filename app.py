@@ -13,10 +13,28 @@ mongo = PyMongo(app)
 DBS_NAME = "animal_facts"
 
 
+'''
+mammals = mongo.db.animals.find({"animal_type": "Mammals"})
+birds = mongo.db.animals.find({"animal_type": "Birds"})
+reptiles = mongo.db.animals.find({"animal_type": "Reptiles"})
+amphibians = mongo.db.animals.find({"animal_type": "Amphibians"})
+fish = mongo.db.animals.find({"animal_type": "Fish"})
+invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
+'''
+
+
 @app.route("/")
 @app.route("/get_animals")
 def get_animals():
-    return render_template("animals.html", animals=mongo.db.animals.find())
+    mammals = mongo.db.animals.find({"animal_type": "Mammals"})
+    birds = mongo.db.animals.find({"animal_type": "Birds"})
+    reptiles = mongo.db.animals.find({"animal_type": "Reptiles"})
+    amphibians = mongo.db.animals.find({"animal_type": "Amphibians"})
+    fish = mongo.db.animals.find({"animal_type": "Fish"})
+    invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
+    return render_template("animals.html", mammals=mammals, birds=birds, 
+                           reptiles=reptiles, amphibians=amphibians, fish=fish, 
+                           invertebrates=invertebrates)
 
 
 # testing piece of code

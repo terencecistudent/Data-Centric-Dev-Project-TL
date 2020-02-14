@@ -3,7 +3,7 @@
 {% block content %}
 
 <!--Sub Heading For Page-->
-<div class="row pt-3">
+<div class="row pt-3 pb-3">
     <div class="col">
         <h2 class="text-center">Animals</h2>
     </div>
@@ -12,60 +12,283 @@
 <div class="row pt-3 mb-2">
     <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="col-sm-12 col-md-3 col-lg-3 pt-3">
                 <!--Scrollspy containing animal types-->
                 <div id="animal-type-list" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#list-item-1">Mammals</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-2">Birds</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-3">Fish</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-4">Reptiles</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-4">Amphibians</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-4">Invertebrates</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-mammals">Mammals</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-birds">Birds</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-fish">Fish</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-reptiles">Reptiles</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-amphibians">Amphibians</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-invertebrates">Invertebrates</a>
                 </div>
             </div>
             <div class="col-sm-12 col-md-9 col-lg-9">
                 <!--Containing animal info-->
                 <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-                    {% for animal in animals %}
-                    <h4 id="list-item-1">Mammals</h4>
-                    <div class="row">
-                        <div class="col">
-                            <h2>{{ animal.elephant_name }}</h2>
-                            <p>{{ animal.elephant_diet }}</p>
-                        </div>
-                    </div>
+                    
+                    <!--Heading for Mammals-->
+                    <h2 id="list-item-mammals" class="text-center pt-2 pb-3">Mammals</h2>
+                    
+                    <!--Finds all Mammals in database-->
+                    {% for animal in mammals %}
 
-                    <h4 id="list-item-2">Birds</h4>
                         <div class="row">
-                            <div class="col">
-                                <h2>{{ animal.eagle_name }}</h2>
-                                <h4>{{ animal.eagle_diet }}</h4>
+                            <div class="col-12 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-mammals">
+                                    <div class="card">
+                                        <div class="card-header" id="mammalsHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#mammalsCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="mammalsCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-mammals">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    <h4 id="list-item-3">Fish</h4>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
-                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
-                            dignissimos atque officia rerum quis nostrum iure?
-                        </p>
-                    <h4 id="list-item-4">Reptiles</h4>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
-                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
-                            dignissimos atque officia rerum quis nostrum iure?
-                        </p>
-                    <h4 id="list-item-5">Amphibians</h4>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
-                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
-                            dignissimos atque officia rerum quis nostrum iure?
-                        </p>
-                    <h4 id="list-item-6">Invertebrates</h4>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, asperiores tempora, 
-                            ex provident distinctio necessitatibus nam at sit velit obcaecati minus expedita dicta 
-                            dignissimos atque officia rerum quis nostrum iure?
-                        </p>
+
+                    {% endfor %}
+
+                    <!--Heading for Birds-->
+                    <h3 id="list-item-birds" class="text-center pt-4 pb-3 margin-top">Birds</h3>
+                    
+                    <!--Finds all Birds in database-->
+                    {% for animal in birds %}
+
+                        <div class="row">
+                            <div class="col-12 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-birds" class="ccordion">
+                                    <div class="card">
+                                        <div class="card-header" id="birdsHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#birdsCollapse{{loop.index}}" aria-expanded="false" aria-controls="birdsCollapse">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="birdsCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-birds">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                    <!--Heading for Fish-->
+                    <h3 id="list-item-fish" class="text-center pt-4 pb-3 margin-top">Fish</h3>
+
+                    <!--Finds all Fish in database-->
+                    {% for animal in fish %}
+
+                        <div class="row">
+                            <div class="col-12 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-fish">
+                                    <div class="card">
+                                        <div class="card-header" id="fishHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#fishCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="fishCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-fish">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                    <!--Heading for Reptiles-->
+                    <h3 id="list-item-reptiles" class="text-center pt-4 pb-3 margin-top">Reptiles</h3>
+                    
+                    <!--Finds all Reptiles in database-->
+                    {% for animal in reptiles %}
+
+                        <div class="row">
+                            <div class="col-12 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-reptiles">
+                                    <div class="card">
+                                        <div class="card-header" id="reptilesHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#reptilesCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="reptilesCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-reptiles">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    
+                    <!--Heading for Amphibians-->
+                    <h3 id="list-item-amphibians" class="text-center pt-4 pb-3 margin-top">Amphibians</h3>
+
+                    <!--Finds all Amphibians in database-->
+                    {% for animal in amphibians %}
+
+                        <div class="row">
+                            <div class="col-12 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-amphibians">
+                                    <div class="card">
+                                        <div class="card-header" id="amphibiansHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#amphibiansCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="amphibiansCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-amphibians">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                    <!--Heading for Invertebrates-->
+                    <h3 id="list-item-invertebrates" class="text-center pt-4 pb-3 margin-top">Invertebrates</h3>
+
+                    <!--Finds all Invertebrates in database-->
+                    {% for animal in invertebrates %}
+
+                        <div class="row">
+                            <div class="col-12 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-invertebrates">
+                                    <div class="card">
+                                        <div class="card-header" id="invertebratesHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#invertebratesCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="invertebratesCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-invertebrates">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     {% endfor %}
                 </div>
             </div> 
