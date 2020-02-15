@@ -3,6 +3,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+/* 
+    Navbar 
+*/
+
+.navbar-brand{
+    text-decoration: underline;
+}
+
 .list-group-item{
     background-color: lightgray;
     font-size: large;

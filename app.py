@@ -43,6 +43,11 @@ def testing():
     return render_template("testing.html")
 
 
+@app.route("/add_animals")
+def add_animals():
+    return render_template("addanimal.html", categories=mongo.db.animal_types.find())
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
