@@ -45,7 +45,7 @@ def testing():
 
 @app.route("/add_animals")
 def add_animals():
-    return render_template("addanimal.html", categories=mongo.db.animal_types.find())
+    return render_template("addanimal.html", animalTypes=mongo.db.animal_types.find())
 
 
 if __name__ == "__main__":
