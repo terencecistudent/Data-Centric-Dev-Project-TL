@@ -37,6 +37,11 @@ def get_animals():
                            invertebrates=invertebrates)
 
 
+@app.route("/all_animals")
+def all_animals():
+    return render_template("allanimals.html", animals=mongo.db.animals.find())
+
+
 # testing piece of code
 @app.route("/testing")
 def testing():

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} 
+{% block content %}
+
+<!--Sub Heading For Page-->
+<div class="row pt-3 pb-3">
+    <div class="col">
+        <h2 class="text-center">Animals</h2>
+    </div>
+</div>
+<!--Main Content-->
+<div class="row pt-3 mb-2">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 pt-3">
+                <!--Scrollspy containing animal types-->
+                <div id="animal-type-list" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-mammals">Mammals</a>
+                    <a class="list-group-item list-group-item-action" href="#list-birds">Birds</a>
+                    <a class="list-group-item list-group-item-action" href="#list-fish">Fish</a>
+                    <a class="list-group-item list-group-item-action" href="#list-reptiles">Reptiles</a>
+                    <a class="list-group-item list-group-item-action" href="#list-amphibians">Amphibians</a>
+                    <a class="list-group-item list-group-item-action" href="#list-invertebrates">Invertebrates</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-9">
+                <!--Containing animal info-->
+                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                    
+                    <!--Heading for Mammals-->
+                    <h2 id="list-item-mammals" class="text-center pt-2 pb-3">Mammals</h2>
+                    
+                    <!--Finds all Mammals in database-->
+                    
+                    {% for animal in animals %}
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 text-align-img">
+                                <!--Collapse Accordion-->
+                                <div id="accordion-mammals">
+                                    <div class="card">
+                                        <div class="card-header" id="mammalsHeading">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#mammalsCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
+                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="mammalsCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-mammals">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Type:</b> {{ animal.animal_type }}</p>
+                                                        <p><b>Scientific Name:</b> {{ animal.animal_scientific_name }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Diet:</b> {{ animal.animal_diet }}</p>
+                                                        <p><b>Size:</b> {{ animal.animal_size }}</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                        <p><b>Weight:</b> {{ animal.animal_weight }}</p>
+                                                        <p><b>Species:</b> {{ animal.animal_species }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 text-align-img">
+                                <a href="#" class="waves-effect waves-light btn btn_small btn-success">Del</a>
+                                <a href="#" class="waves-effect waves-light btn btn_small btn-info">Edit</a>
+                            </div>
+                        </div>
+
+                    {% endfor %} 
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+{% endblock %}
