@@ -2,75 +2,19 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-<h3>Add An Animal</h3>
+<!--Sub Heading For Page-->
+<div class="row pt-3 pb-3">
+    <div class="col">
+        <h2 class="text-center">Add An Animal</h2>
+    </div>
+</div>
 
 <div class="row">
-    <form action="{{ url_for('insert_animal') }}" method="post">
-        <!--Animal Type Selection-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <!--Selecting Animal Type from Select Options-->
-                <select name="animal_type" id="animals">
-                    <option value="" disabled selected>Choose Animal Type</option>
-                    {% for type in animals %}
-
-                        <option value="{{ type.animal_type }}">{{ type.animal_type }}</option>
-
-                    {% endfor %}
-                </select>
-                <p>Animal Type</p>
-            </div>
-        </div>
-        <!--Inserting Animal Name-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input id="animal_name" name="animal_name" type="text" class="validate">
-                <label for="">Animal Name</label>
-            </div>
-        </div>
-        <!--Inserting Animal Type-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input name="animal_type" id="animal_type" class="validate">
-                <label for="">Animal Type</label>
-            </div>
-        </div>
-        <!--Inserting Animal Scientific Name-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input name="animal_scientific_name" id="animal_scientific_name" class="validate">
-                <label for="">Animal Scientific Name</label>
-            </div>
-        </div>
-        <!--Inserting Animal Diet-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input name="animal_diet" id="animal_diet" class="validate">
-                <label for="">Animal Diet</label>
-            </div>
-        </div>
-        <!--Inserting Animal Size-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input name="animal_size" id="animal_size" class="validate">
-                <label for="">Animal Size</label>
-            </div>
-        </div>
-        <!--Inserting Animal Weight-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input name="animal_weight" id="animal_weight" class="validate">
-                <label for="">Animal Weight</label>
-            </div>
-        </div>
-        <!--Inserting Animal Species-->
-        <div class="row">
-            <div class="col-12 input-field">
-                <input name="animal_species" id="animal_species" class="validate">
-                <label for="">Animal Species</label>
-            </div>
-        </div>
-    </form>
+    <div class="col-12">
+        <form action="" method="post">
+            
+        </form>
+    </div>
 </div>
 
 {% endblock %}

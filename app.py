@@ -48,9 +48,19 @@ def testing():
     return render_template("testing.html")
 
 
+# adding animals
 @app.route("/add_animals")
 def add_animals():
-    return render_template("addanimal.html", animalTypes=mongo.db.animal_types.find())
+    return render_template("addanimal.html", 
+                            animalTypes=mongo.db.animal_types.find())
+
+
+# insert animals using POST
+@app.route("/insert_animal", methods=["POST"])
+def insert_animal():
+    animals = mongo.db.animals
+    animals.insert_one(request.form.to_dict())
+    return redirect(url_for("get_animals"))
 
 
 if __name__ == "__main__":

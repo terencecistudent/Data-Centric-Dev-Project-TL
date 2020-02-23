@@ -14,13 +14,22 @@
         <div class="row">
             <div class="col-sm-12 col-md-3 col-lg-3 pt-3">
                 <!--Scrollspy containing animal types-->
-                <div id="animal-type-list" class="list-group">
+                <!--<div id="animal-type-list" class="list-group">
                     <a class="list-group-item list-group-item-action" href="#list-item-mammals">Mammals</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-birds">Birds</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-fish">Fish</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-reptiles">Reptiles</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-amphibians">Amphibians</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-invertebrates">Invertebrates</a>
+                </div> -->
+
+                <div id="animals-list" class="categories-list">
+                    <button class="btn btn-info animals" id="#list-item-mammals">Mammals</button>
+                    <button class="btn btn-info animals" id="#list-item-birds">Birds</button>
+                    <button class="btn btn-info animals" id="#list-item-fish">Fish</button>
+                    <button class="btn btn-info animals" id="#list-item-reptiles">Reptiles</button>
+                    <button class="btn btn-info animals" id="#list-item-amphibians">Amphibians</button>
+                    <button class="btn btn-info animals" id="#list-item-invertebrates">Invertebrates</button>
                 </div>
             </div>
             <div class="col-sm-12 col-md-9 col-lg-9">
@@ -43,7 +52,7 @@
                                             <h5 class="mb-0">
                                                 <button class="btn btn-link" data-toggle="collapse" data-target="#mammalsCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
                                                     <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
-                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
+                                                    <h4 class="h4-text-black pt-3">{{ animal.animal_name }}</h4>
                                                 </button>
                                             </h5>
                                         </div>
@@ -85,7 +94,7 @@
                         <div class="row">
                             <div class="col-12 text-align-img">
                                 <!--Collapse Accordion-->
-                                <div id="accordion-birds" class="ccordion">
+                                <div id="accordion-birds" class="accordion">
                                     <div class="card">
                                         <div class="card-header" id="birdsHeading">
                                             <h5 class="mb-0">

@@ -1,5 +1,16 @@
 $(document).ready(function(){
-    $("#list-mammal").click(function(){
-        $("#accordion-mammals").replaceWith("Hello world!");
+    $(".list-group-item").click(function() {
+        let type = $(this).attr("id");
+        let animals = $(".animal");
+        $(animals).hide();
+        $("#" + type).show();
+
+        /* let mammals = $("#Mammals"),
+            birds = $("#Birds"),
+            fish = $("#Fish"),
+            reptiles = $("#Reptiles"),
+            amphibians = $("#Amphibians"),
+            invertebrates = $("#Invertebrates");
+        */
     });
 });
