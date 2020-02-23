@@ -52,7 +52,8 @@ def testing():
 @app.route("/add_animals")
 def add_animals():
     return render_template("addanimal.html", 
-                            animalTypes=mongo.db.animal_types.find())
+                            types=mongo.db.types.find(),
+                            animals=mongo.db.animals.find())
 
 
 # insert animals using POST
