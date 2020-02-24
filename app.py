@@ -23,6 +23,7 @@ invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
 '''
 
 
+# Main homepage
 @app.route("/")
 @app.route("/get_animals")
 def get_animals():
@@ -37,9 +38,11 @@ def get_animals():
                            invertebrates=invertebrates)
 
 
+# Another testing piece of code
 @app.route("/all_animals")
 def all_animals():
-    return render_template("allanimals.html", animals=mongo.db.animals.find())
+    animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
+    return render_template("allanimals.html", animals=list(animals))
 
 
 # testing piece of code

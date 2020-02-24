@@ -1,111 +1,59 @@
 <!DOCTYPE html>
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 
 <!--Sub Heading For Page-->
 <div class="row pt-3 pb-3">
-    <div class="col">
-        <h2 class="text-center">Animals</h2>
-    </div>
+	<div class="col">
+		<h2 class="text-center">Animals</h2>
+	</div>
 </div>
 <!--Main Content-->
 <div class="row pt-3 mb-2">
-    <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3 pt-3">
-                <!--Scrollspy containing animal types-->
-                <div id="animal-type-list" class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Mammals">Mammals</button>
-                    <button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Birds">Birds</button>
-                    <button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Fish">Fish</button>
-                    <button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Reptiles">Reptiles</button>
-                    <button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Amphibians">Amphibians</button>
-                    <button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Invertebrates">Invertebrates</button>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-9 col-lg-9">
-                <!--Containing animal info-->
-                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-                    
-                    <!--Finds all Animals in database-->
-                    
-                    {% for animal in animals %}
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		<div class="row">
+			<div class="col-sm-12 col-md-3 col-lg-3 pt-3">
+				<!--Scrollspy containing animal types-->
+				<div id="animal-type-list" class="list-group">
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Amphibians">Amphibians</button>
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Birds">Birds</button>
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Fish">Fish</button>
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Invertebrates">Invertebrates</button>
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Mammals">Mammals</button>
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Reptiles">Reptiles</button>
+				</div>
+			</div>
 
-                        <div class="row">
-                            <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 text-align-img">
-                                <!--Collapse Accordion-->
-                                <div id="accordion-animals">
-                                    <div class="card">
-                                        <div class="card-header" id="mammalsHeading">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-link" data-toggle="collapse" data-target="#animalsCollapse{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
-                                                    <img src="{{ animal.animal_image }}" alt="" width="250" height="250"/>
-                                                    <h4 class="h4-text-black">{{ animal.animal_name }}</h4>
-                                                </button>
-                                            </h5>
-                                        </div>
-                                        <div id="animalsCollapse{{loop.index}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-animals">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                        <p>
-                                                            <b>Type:</b> 
-                                                            <span class="animal {{animal.animal_type}}">
-                                                                {{ animal.animal_type }}
-                                                            </span>
-                                                        </p>
-                                                        <p>
-                                                            <b>Scientific Name:</b> 
-                                                            <span class="animal {{animal.animal_scientific_name}}">
-                                                                {{ animal.animal_scientific_name }}
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                        <p>
-                                                            <b>Diet:</b> 
-                                                            <span class="animal {{animal.animal_diet}}">
-                                                                {{ animal.animal_diet }}
-                                                            </span>
-                                                        </p>
-                                                        <p>
-                                                            <b>Size:</b> 
-                                                            <span class="animal {{animal.animal_size}}">
-                                                                {{ animal.animal_size }}
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                        <p>
-                                                            <b>Weight:</b> 
-                                                            <span class="animal {{animal.animal_weight}}">
-                                                                {{ animal.animal_weight }}
-                                                            </span>
-                                                        </p>
-                                                        <p>
-                                                            <b>Species:</b> 
-                                                            <span class="animal {{animal.animal_species}}">
-                                                                {{ animal.animal_species }}
-                                                            </span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 text-align-img">
-                                <a href="#" class="waves-effect waves-light btn btn_small btn-success">Del</a>
-                                <a href="#" class="waves-effect waves-light btn btn_small btn-info">Edit</a>
-                            </div>
+			<div class="col-sm-12 col-md-9 col-lg-9">
+
+				{% for animal in animals %}
+				<div class="card mb-3" style="max-width: 540px;">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="{{ animal.animal_image }}" class="card-img" alt="{{ animal.animal_name }}" width="200" height="200">
                         </div>
+							<div class="col-md-8">
+								<div class="card-body">
+									<h5 class="card-title">{{ animal.animal_name }}</h5>
+									<p class="card-text">{{ animal.animal_type }}</p>
+									<p class="card-text"><strong>Scientific Name:</strong> {{ animal.animal_scientific_name }}</p>
+									<p class="card-text"><strong>Diet:</strong> {{ animal.animal_diet }}</p>
+									<p class="card-text"><strong>Size:</strong> {{ animal.animal_size }}</p>
+									<p class="card-text"><strong>Weight:</strong> {{ animal.animal_weight }}</p>
+									<p class="card-text"><strong>Species:</strong> {{ animal.animal_species }}</p>
+									<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									<a href="#" class="waves-effect waves-light btn btn_small btn-success">Del</a>
+									<a href="#" class="waves-effect waves-light btn btn_small btn-info">Edit</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
 
-                    {% endfor %} 
-                </div>
-            </div> 
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}
