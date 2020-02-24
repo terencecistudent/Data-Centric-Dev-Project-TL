@@ -19,7 +19,7 @@
                         <label for="animal_type">Animal Type:</label>
                     </div>
                     <div class="col-9">
-                        <select class="form-control" id="animal_type">
+                        <select class="form-control" name="animal_type" id="animal_type">
                             <option value="" disabled selected>Choose Animal Type</option>
                             {% for type in types %}
                                 <option value="{{ type.animal_type }}">{{ type.animal_type }}</option>
@@ -33,7 +33,7 @@
                         <label for="animal_name">Animal Name:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_name" placeholder="Enter animal name here...">
+                        <input class="form-control" type="text" name="animal_name" id="animal_name" placeholder="Enter animal name here...">
                     </div>
                 </div>
                 <!--Animal Scientific Name-->
@@ -42,7 +42,7 @@
                         <label for="animal_scientific_name">Animal Scientific Name:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_scientific_name" placeholder="Enter animal scientific name here...">
+                        <input class="form-control" type="text" name="animal_scientific_name" id="animal_scientific_name" placeholder="Enter animal scientific name here...">
                     </div>
                 </div>
                 <!--Animal Diet-->
@@ -51,7 +51,7 @@
                         <label for="animal_diet">Animal Diet:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_diet" placeholder="Enter animal diet here...">
+                        <input class="form-control" type="text" name="animal_diet" id="animal_diet" placeholder="Enter animal diet here...">
                     </div>
                 </div>
                 <!--Animal Average Lifespan-->
@@ -60,7 +60,7 @@
                         <label for="animal_avg_lifespan">Animal Average Lifespan:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_avg_lifespan" placeholder="Enter animal average lifespan here...">
+                        <input class="form-control" type="text" name="animal_avg_lifespan" id="animal_avg_lifespan" placeholder="Enter animal average lifespan here...">
                     </div>
                 </div>
                 <!--Animal Size-->
@@ -69,7 +69,7 @@
                         <label for="animal_size">Animal Size:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_size" placeholder="Enter animal size here...">
+                        <input class="form-control" type="text" name="animal_size" id="animal_size" placeholder="Enter animal size here...">
                     </div>
                 </div>
                 <!--Animal Weight-->
@@ -78,7 +78,7 @@
                         <label for="animal_weight">Animal Weight:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_weight" placeholder="Enter animal weight here...">
+                        <input class="form-control" type="text" name="animal_weight" id="animal_weight" placeholder="Enter animal weight here...">
                     </div>
                 </div>
                 <!--Animal Species-->
@@ -87,16 +87,16 @@
                         <label for="animal_species">Animal Species:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" id="animal_species" placeholder="Enter animal species here...">
+                        <input class="form-control" type="text" name="animal_species" id="animal_species" placeholder="Enter animal species here...">
                     </div>
                 </div>
                 <!--Animal Image-->
                 <div class="row pb-2">
                     <div class="col-3">
-                        <label for="animal_image">Animal Image:</label>
+                        <label for="animal_species">Animal Image:</label>
                     </div>
                     <div class="col-9">
-                        <input type="file" class="form-control-file" id="animal_image">
+                        <input class="form-control" type="text" name="animal_image" id="animal_image" pattern="https?://.+" placeholder="Enter animal image url here...">
                     </div>
                 </div>
             </div>

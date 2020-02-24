@@ -21,36 +21,34 @@
 					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Invertebrates">Invertebrates</button>
 					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Mammals">Mammals</button>
 					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Reptiles">Reptiles</button>
+					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="animal-card">Show All</button>
 				</div>
 			</div>
 
 			<div class="col-sm-12 col-md-9 col-lg-9">
 
 				{% for animal in animals %}
-				<div class="card mb-3" style="max-width: 540px;">
+				<div class="card mb-3 animal-card {{ animal.animal_type }}" style="max-width: 540px;">
 					<div class="row no-gutters">
-						<div class="col-md-4">
+						<div class="col-md-5">
 							<img src="{{ animal.animal_image }}" class="card-img" alt="{{ animal.animal_name }}" width="200" height="200">
                         </div>
-							<div class="col-md-8">
-								<div class="card-body">
-									<h5 class="card-title">{{ animal.animal_name }}</h5>
-									<p class="card-text">{{ animal.animal_type }}</p>
-									<p class="card-text"><strong>Scientific Name:</strong> {{ animal.animal_scientific_name }}</p>
-									<p class="card-text"><strong>Diet:</strong> {{ animal.animal_diet }}</p>
-									<p class="card-text"><strong>Size:</strong> {{ animal.animal_size }}</p>
-									<p class="card-text"><strong>Weight:</strong> {{ animal.animal_weight }}</p>
-									<p class="card-text"><strong>Species:</strong> {{ animal.animal_species }}</p>
-									<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-									<a href="#" class="waves-effect waves-light btn btn_small btn-success">Del</a>
-									<a href="#" class="waves-effect waves-light btn btn_small btn-info">Edit</a>
-								</div>
+						<div class="col-md-7">
+							<div class="card-body">
+								<h5 class="card-title">{{ animal.animal_name }}</h5>
+								<p class="card-text">{{ animal.animal_type }}</p>
+								<p class="card-text"><strong>Scientific Name:</strong> {{ animal.animal_scientific_name }}</p>
+								<p class="card-text"><strong>Diet:</strong> {{ animal.animal_diet }}</p>
+								<p class="card-text"><strong>Size:</strong> {{ animal.animal_size }}</p>
+								<p class="card-text"><strong>Weight:</strong> {{ animal.animal_weight }}</p>
+								<p class="card-text"><strong>Species:</strong> {{ animal.animal_species }}</p>
+								<a href="#" class="waves-effect waves-light btn btn_small btn-success">Del</a>
+								<a href="#" class="waves-effect waves-light btn btn_small btn-info">Edit</a>
 							</div>
 						</div>
 					</div>
-					{% endfor %}
-
 				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

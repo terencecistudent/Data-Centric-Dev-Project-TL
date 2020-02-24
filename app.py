@@ -25,20 +25,6 @@ invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
 
 # Main homepage
 @app.route("/")
-@app.route("/get_animals")
-def get_animals():
-    mammals = mongo.db.animals.find({"animal_type": "Mammals"})
-    birds = mongo.db.animals.find({"animal_type": "Birds"})
-    reptiles = mongo.db.animals.find({"animal_type": "Reptiles"})
-    amphibians = mongo.db.animals.find({"animal_type": "Amphibians"})
-    fish = mongo.db.animals.find({"animal_type": "Fish"})
-    invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
-    return render_template("animals.html", mammals=mammals, birds=birds, 
-                           reptiles=reptiles, amphibians=amphibians, fish=fish, 
-                           invertebrates=invertebrates)
-
-
-# Another testing piece of code
 @app.route("/all_animals")
 def all_animals():
     animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
@@ -64,7 +50,7 @@ def add_animals():
 def insert_animal():
     animals = mongo.db.animals
     animals.insert_one(request.form.to_dict())
-    return redirect(url_for("get_animals"))
+    return redirect(url_for("all_animals"))
 
 
 if __name__ == "__main__":
