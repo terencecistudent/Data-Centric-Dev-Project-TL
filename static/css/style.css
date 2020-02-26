@@ -28,3 +28,8 @@ body{
 .h4-text-black{
     color:black;
 }
+
+.card-img{
+    width: 300px;
+    height: 300px;
+}
