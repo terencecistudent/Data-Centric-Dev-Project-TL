@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Sub Heading For Page-->
+<div class="row pt-3 pb-3">
+    <div class="col">
+        <h2 class="text-center">Edit An Animal</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <form action="{{ url_for('update_animal', animal_id=animal._id) }}" method="POST">
+            <div class="form-group">
+                <!--Animal Type-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_type">Animal Type:</label>
+                    </div>
+                    <div class="col-9">
+                        <select class="form-control" name="animal_type" id="animal_type">
+                            <option value="" disabled selected>Choose Animal Type</option>
+                            {% for type in types %}
+                                {% if type.animal_type == animal.animal_type %}
+                                    <option value="{{ type.animal_type }}" selected>{{ type.animal_type }}</option>
+                                {% else %}
+                                    <option value="{{ type.animal_type }}">{{ type.animal_type }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!--Animal Name-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_name">Animal Name:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_name" id="animal_name" value="{{animal.animal_name}}">
+                    </div>
+                </div>
+                <!--Animal Scientific Name-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_name">Animal Scientific Name:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_scientific_name" id="animal_scientific_name" value="{{animal.animal_scientific_name}}">
+                    </div>
+                </div>
+                <!--Animal Diet-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_diet">Animal Diet:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_diet" id="animal_diet" value="{{animal.animal_diet}}">
+                    </div>
+                </div>
+                <!--Animal Average Lifespan-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_avg_lifespan">Animal Average Lifespan:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_avg_lifespan" id="animal_avg_lifespan" value="{{animal.animal_avg_lifespan}}">
+                    </div>
+                </div>
+                <!--Animal Size-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_size">Animal Size:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_size" id="animal_size" value="{{animal.animal_size}}">
+                    </div>
+                </div>
+                <!--Animal Weight-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_weight">Animal Weight:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_weight" id="animal_weight" value="{{animal.animal_weight}}">
+                    </div>
+                </div>
+                <!--Animal Image-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_image">Animal Image:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_image" id="animal_image" pattern="https?://.+" value="{{animal.animal_image}}">
+                    </div>
+                </div>
+                <!--Animal Species-->
+                <div class="row pb-2">
+                    <div class="col-3">
+                        <label for="animal_species">Animal Species:</label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="animal_species" id="animal_species" value="{{animal.animal_species}}">
+                    </div>
+                </div>
+            </div>
+            <!--Submit Button-->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -23,7 +23,7 @@ invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
 '''
 
 
-# Main homepage
+# main homepage
 @app.route("/")
 @app.route("/all_animals")
 def all_animals():
@@ -53,10 +53,38 @@ def insert_animal():
     return redirect(url_for("all_animals"))
 
 
+# editing an animal
+@app.route("/edit_animal/<animal_id>")
+def edit_animal(animal_id):
+    the_animal = mongo.db.animals.find_one({"_id": ObjectId(animal_id)})
+    all_animal_types = mongo.db.types.find()
+    return render_template("editanimal.html", animal=the_animal, 
+                            types=all_animal_types)
+
+
+# updating record
+@app.route('/update_animal/<animal_id>', methods=["POST"])
+def update_animal(animal_id):
+    animals = mongo.db.animals
+    animals.update({'_id': ObjectId(animal_id)},
+    {
+        'animal_name': request.form.get('animal_name'),
+        'animal_type': request.form.get('animal_type'),
+        'animal_scientific_name': request.form.get('animal_scientific_name'),
+        'animal_diet': request.form.get('animal_diet'),
+        'animal_avg_lifespan': request.form.get('animal_avg_lifespan'),
+        'animal_size': request.form.get('animal_size'),
+        'animal_weight': request.form.get('animal_weight'),
+        'animal_image': request.form.get('animal_image'),
+        'animal_species': request.form.get('animal_species')
+    })
+    return redirect(url_for('all_animals'))
+
+
 # delete animals from database
-@app.route("/delete_animal/<animals_id>")
-def delete_animal(animals_id):
-    mongo.db.animals.remove({"_id": ObjectId(animals_id)})
+@app.route("/delete_animal/<animal_id>")
+def delete_animal(animal_id):
+    mongo.db.animals.remove({"_id": ObjectId(animal_id)})
     return redirect(url_for("all_animals"))
 
 
