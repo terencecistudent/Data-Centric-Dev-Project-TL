@@ -7,7 +7,7 @@
         <h2 class="text-center">Edit An Animal</h2>
     </div>
 </div>
-
+<!--Main Content-->
 <div class="row">
     <div class="col-12">
         <form action="{{ url_for('update_animal', animal_id=animal._id) }}" method="POST">
@@ -54,7 +54,16 @@
                         <label for="animal_diet">Animal Diet:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" name="animal_diet" id="animal_diet" value="{{animal.animal_diet}}">
+                        <select class="form-control" name="animal_diet" id="animal_diet">
+                            <option value="" disabled selected>Choose Animal Diet</option>
+                            {% for diet in diets %}
+                                {% if diet.animal_diet == animal.animal_diet %}
+                                    <option value="{{ diet.animal_diet }}" selected>{{ diet.animal_diet }}</option>
+                                {% else %}
+                                    <option value="{{ diet.animal_diet }}">{{ diet.animal_diet }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
                 <!--Animal Average Lifespan-->

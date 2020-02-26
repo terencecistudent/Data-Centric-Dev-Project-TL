@@ -7,7 +7,7 @@
         <h2 class="text-center">Add An Animal</h2>
     </div>
 </div>
-
+<!--Main Content-->
 <div class="row">
     <div class="col-12">
         <form action="{{ url_for('insert_animal') }}" method="POST">
@@ -50,7 +50,12 @@
                         <label for="animal_diet">Animal Diet:</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control" type="text" name="animal_diet" id="animal_diet" placeholder="Enter animal diet here...">
+                        <select class="form-control" name="animal_diet" id="animal_diet">
+                            <option value="" disabled selected>Choose Animal Diet</option>
+                            {% for diet in diets %}
+                                <option value="{{ diet.animal_diet }}">{{ diet.animal_diet }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
                 <!--Animal Average Lifespan-->

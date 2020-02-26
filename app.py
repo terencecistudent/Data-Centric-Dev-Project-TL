@@ -42,7 +42,8 @@ def testing():
 def add_animals():
     return render_template("addanimal.html", 
                             types=mongo.db.types.find(),
-                            animals=mongo.db.animals.find())
+                            animals=mongo.db.animals.find(),
+                            diets=mongo.db.diets.find())
 
 
 # insert animals using POST
@@ -58,8 +59,9 @@ def insert_animal():
 def edit_animal(animal_id):
     the_animal = mongo.db.animals.find_one({"_id": ObjectId(animal_id)})
     all_animal_types = mongo.db.types.find()
+    all_diets = mongo.db.diets.find()
     return render_template("editanimal.html", animal=the_animal, 
-                            types=all_animal_types)
+                            types=all_animal_types, diets=all_diets)
 
 
 # updating record
