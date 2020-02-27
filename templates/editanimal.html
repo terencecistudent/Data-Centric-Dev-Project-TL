@@ -8,6 +8,11 @@
     </div>
 </div>
 <!--Main Content-->
+<div class="row pt-2 pb-5">
+    <div class="col-12 text-center">
+        <img src="{{ animal.animal_image }}" alt="{{ animal.animal_image }}" width="200" height="200">
+    </div>
+</div>
 <div class="row">
     <div class="col-12">
         <form action="{{ url_for('update_animal', animal_id=animal._id) }}" method="POST">
@@ -113,7 +118,7 @@
                 </div>
             </div>
             <!--Submit Button-->
-            <div class="row">
+            <div class="row pb-4">
                 <div class="col-12 text-center">
                     <input class="btn btn-success" type="submit" value="Submit">
                 </div>

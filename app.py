@@ -13,16 +13,6 @@ mongo = PyMongo(app)
 DBS_NAME = "animal_facts"
 
 
-'''
-mammals = mongo.db.animals.find({"animal_type": "Mammals"})
-birds = mongo.db.animals.find({"animal_type": "Birds"})
-reptiles = mongo.db.animals.find({"animal_type": "Reptiles"})
-amphibians = mongo.db.animals.find({"animal_type": "Amphibians"})
-fish = mongo.db.animals.find({"animal_type": "Fish"})
-invertebrates = mongo.db.animals.find({"animal_type": "Invertebrates"})
-'''
-
-
 # main homepage
 @app.route("/")
 @app.route("/all_animals")

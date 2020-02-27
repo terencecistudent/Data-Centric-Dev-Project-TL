@@ -1,5 +1,9 @@
 body{
-    background-color: darkgray;
+    /*background-color: darkgray; */
+    background-image: url('static/images/background.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -27,9 +31,4 @@ body{
 
 .h4-text-black{
     color:black;
-}
-
-.card-img{
-    width: 300px;
-    height: 300px;
 }

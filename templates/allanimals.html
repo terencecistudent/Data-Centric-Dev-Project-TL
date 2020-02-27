@@ -11,7 +11,7 @@
 <div class="row pt-3 mb-2">
 	<div class="col-sm-12 col-md-12 col-lg-12">
 		<div class="row">
-			<div class="col-sm-12 col-md-3 col-lg-3 pt-3 pb-3">
+			<div class="col-sm-12 col-md-3 col-lg-3 pt-1 pb-3">
 				<!--Scrollspy containing animal types-->
 				<div id="animal-type-list" class="list-group">
 					<button type="button" class="list-group-item list-group-item-action btn btn-secondary" id="Amphibians">Amphibians</button>
@@ -24,12 +24,12 @@
 				</div>
 			</div>
             <!--Section for animal information-->
-			<div class="col-sm-12 col-md-9 col-lg-9">
+			<div class="col-sm-12 col-md-9 col-lg-9 pt-1">
 				{% for animal in animals %}
 				<div class="card mb-3 text-white bg-dark animal-card {{ animal.animal_type }}" style="max-width: 100%;">
 					<div class="row no-gutters">
 						<div class="col-md-5">
-							<img src="{{ animal.animal_image }}" class="card-img text-center" alt="{{ animal.animal_name }}" width="300" height="300">
+							<img src="{{ animal.animal_image }}" class="card-img text-center" alt="{{ animal.animal_name }}" height="300">
                         </div>
 						<div class="col-md-7">
 							<div class="card-body">
