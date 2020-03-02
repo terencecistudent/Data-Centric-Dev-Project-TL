@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -78,6 +79,16 @@ def update_animal(animal_id):
 def delete_animal(animal_id):
     mongo.db.animals.remove({"_id": ObjectId(animal_id)})
     return redirect(url_for("all_animals"))
+
+
+# find animal by species
+@app.route("/species_find", methods=["GET"])
+def species_find():
+    # ab = mongo.db.animals.find({"animal_species": {"$regex": "/^a/"}})
+    animals = mongo.db.animals.find()
+    ab = animals.request.form.get("animal_species")
+    print(ab)
+    return render_template("animalbyspecies.html", abButtons=ab)
 
 
 if __name__ == "__main__":
