@@ -16,10 +16,18 @@ DBS_NAME = "animal_facts"
 
 # main homepage
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+
+# main animal page
 @app.route("/all_animals")
 def all_animals():
     animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
-    return render_template("allanimals.html", animals=list(animals))
+    diets = mongo.db.diets.find()
+    return render_template("allanimals.html", animals=list(animals),
+                            diets=list(diets))
 
 
 # testing piece of code
