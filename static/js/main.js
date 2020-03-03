@@ -7,10 +7,4 @@ $(document).ready(function(){
         $("." + thisID).show();
     });
 
-    // animalsbyspecies button links
-    /*$("speciesButton").click(function(){
-        let selectedID = $(this).attr("id");
-        $("species-animal-card").hide
-    }) */
-
 });

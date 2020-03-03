@@ -1,6 +1,6 @@
 import os
 import re
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, jsonify
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -84,11 +84,11 @@ def delete_animal(animal_id):
 # find animal by species
 @app.route("/species_find", methods=["GET"])
 def species_find():
-    # ab = mongo.db.animals.find({"animal_species": {"$regex": "/^a/"}})
-    animals = mongo.db.animals.find()
-    ab = animals.request.form.get("animal_species")
-    print(ab)
-    return render_template("animalbyspecies.html", abButtons=ab)
+    a = mongo.db.animals.find({"animal_species": {"$regex": '/A/i'}})
+    print(a)
+    mongo.db.animals.find()
+    return render_template("animalbyspecies.html",
+                            animals=mongo.db.animals.find().sort([("animal_species", 1), ("animal_name", 1)]))
 
 
 if __name__ == "__main__":
