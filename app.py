@@ -18,6 +18,7 @@ DBS_NAME = "animal_facts"
 @app.route("/")
 @app.route("/home")
 def home():
+    mongo.db.animals.find()
     return render_template("index.html")
 
 
