@@ -8,36 +8,25 @@
 </div>
 <div class="row text-center pb-5">
     <div class="col-12">
-        <div class="row">
-            <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7">
-                <span class="border border-dark">
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Accusamus, rem fugit. Nesciunt quibusdam, similique, atque 
-                        fugiat modi earum omnis ab magni quo minima iste voluptates 
-                        molestias velit sunt cupiditate a.
-                    </p>
-                </span>
+        <!--Search bar for animal search-->
+        <div class="row pt-3 pb-3 text-center">
+            <div class="col">
+                <form action="{{ url_for('search_animal') }}" method="GET">
+                    <span><i class="fas fa-search"></i></span>
+                    <input type="search" name="search_animal" id="search_animal">
+                    <button type="submit" class="btn btn-danger" id="search_btn" aria-placeholder="Find an animal here...">Search</button>
+                </form>
             </div>
+        </div>
+        <div class="row pt-5">
             <!--Carousel of animal images-->
-            <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        {% for image in animals %}
-                            <div class="carousel-item active">
-                                <img src="{{ image.animal_image }}" class="d-block w-100" alt="{{ image.animal_image }}">
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+            <div class="col">
+                <h5>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aliquam quibusdam asperiores possimus, sunt repudiandae, 
+                    adipisci ab at repellat sed pariatur accusantium eius, obcaecati 
+                    rem tempora vitae qui quae. Assumenda, provident.
+                </h5>
             </div>
         </div>
     </div>

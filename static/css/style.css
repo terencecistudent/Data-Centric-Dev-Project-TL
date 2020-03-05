@@ -1,5 +1,8 @@
+/*
+    background and font
+*/
 body{
-    background-image: url('/static/images/alpsbackground.jpg');
+    background-image: url('/static/images/background3.jpg');
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -8,6 +11,9 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+/*
+    side nav bar on all animals page 
+*/
 .list-group-item{
     background-color: lightgray;
     font-size: large;
@@ -22,14 +28,27 @@ body{
     text-align: center;
 }
 
-.margin-top{
-    margin-top: 30px;
+/* 
+    search bar 
+*/
+#search_animal{
+    width: 50%;
 }
 
-.bold-text{
-    font-weight: bold;
+/*
+    footer
+*/
+#page-footer{
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    height: 80px;
 }
 
-.h4-text-black{
-    color:black;
+.icon-colour{
+    color: white;
+}
+
+.icon-colour:hover{
+    color: grey;
 }
