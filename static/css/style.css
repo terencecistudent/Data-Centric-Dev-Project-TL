@@ -3,7 +3,7 @@
 */
 body{
     background-image: url('/static/images/background3.jpg');
-    height: 100vh;
+    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom left;
@@ -15,13 +15,15 @@ body{
     side nav bar on all animals page 
 */
 .list-group-item{
-    background-color: lightgray;
     font-size: large;
 }
 
 .list-group-item:hover{
-    background-color: darkgrey;
-    font-size: large;
+    background-color: lightgray;
+}
+
+.list-group-item:active{
+    background-color: lightgray;
 }
 
 .text-align-img{
@@ -33,6 +35,25 @@ body{
 */
 #search_animal{
     width: 50%;
+}
+
+/*
+    animal image cards
+*/
+.card-img{
+    height: 300px;
+}
+
+.animal-body-info{
+    height: 300px;
+}
+
+/*
+    jumbotron
+*/
+.jumbotron{
+    background-color: rgba(233, 236, 239, 0.56);
+    border-radius: 30px;
 }
 
 /*

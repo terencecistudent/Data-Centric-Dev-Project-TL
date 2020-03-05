@@ -1,6 +1,6 @@
 import os
 import re
-from flask import Flask, render_template, redirect, request, url_for, jsonify
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo import collection
@@ -19,17 +19,20 @@ DBS_NAME = "animal_facts"
 @app.route("/")
 @app.route("/home")
 def home():
-    mongo.db.animals.create_index({"animal_name": "text"})
-    findElephant = collection.animals.find({"$text": {"$search": ""}})
-    print(findElephant)
     return render_template("index.html")
 
 
 # find animal search
 @app.route("/search_animal", methods=["POST", "GET"])
 def search_animal():
+    '''import pdb; pdb.set_trace()
+    mongo.db.animals.create_index({"animal_name": "text"})
+    findElephant = mongo.db.animals.find({"$text": {"$search": ""}})
     mongo.db.animals.find()
-    return redirect(url_for("all_animals"))
+    diets = mongo.db.diets.find()'''
+    return render_template("allanimals.html")
+    #return render_template("allanimals.html", animals=list(animals),
+                            #diets=list(diets))
 
 
 # main animal page
