@@ -6,7 +6,7 @@ body{
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: center;
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
 }
@@ -14,15 +14,11 @@ body{
 /*
     side nav bar on all animals page 
 */
-.list-group-item{
+.animal-btns{
     font-size: large;
 }
 
 .list-group-item:hover{
-    background-color: lightgray;
-}
-
-.list-group-item:active{
     background-color: lightgray;
 }
 
@@ -72,4 +68,8 @@ body{
 
 .icon-colour:hover{
     color: grey;
+}
+
+.text {
+    color: pink !important 
 }
