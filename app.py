@@ -23,15 +23,15 @@ def home():
 
 
 # find animal search
-@app.route("/search_animal", methods=["GET"])
+@app.route("/search_animal", methods=["GET", "POST"])
 def search_animal():
     '''import pdb; pdb.set_trace()'''
     animals = mongo.db.animals.find()
-    diets = mongo.db.diets.find()
-    mongo.db.animals.create_index({"animal_name": "text"})
-    mongo.db.animals.find({"$text": {"$search": animals}}).sort({"animal_name", 1})
+    types = mongo.db.types.find()
+    mongo.db.animals.create_index({"animal_name": "text", "animal_type": "text"})
+    mongo.db.animals.find({"$text": {"$search": "animals"}}).sort([("animal_name", 1), ("animal_type", 1)])
     return render_template("allanimals.html", animals=list(animals),
-                            diets=list(diets))
+                            types=list(types))
 
 
 # main animal page

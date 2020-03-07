@@ -11,6 +11,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+
 /*
     side nav bar on all animals page 
 */
@@ -26,6 +27,7 @@ body{
     text-align: center;
 }
 
+
 /* 
     search bar 
 */
@@ -33,16 +35,14 @@ body{
     width: 50%;
 }
 
+
 /*
     animal image cards
 */
 .card-img{
-    height: 300px;
+    height: 100%;
 }
 
-.animal-body-info{
-    height: 300px;
-}
 
 /*
     jumbotron
@@ -51,6 +51,7 @@ body{
     background-color: rgba(233, 236, 239, 0.56);
     border-radius: 30px;
 }
+
 
 /*
     footer

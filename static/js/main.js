@@ -9,7 +9,10 @@ $(document).ready(function(){
         $(this).addClass("text-red");
     });
 
-    // all animals page sub heading include animal type
+    /*
+        all animals page sub heading include animal type
+        side bar nav removes white text for any button not selected
+    */
     $("#animal-card").click(function(){
         $("#animalsTitle").text(" - All Types");
         $("#Amphibians").removeClass("text-white");
