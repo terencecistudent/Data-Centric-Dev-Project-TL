@@ -2,7 +2,6 @@ $(document).ready(function(){
 
     // homepage side nav categorising animal types
     $(".list-group-item").click(function() {
-        console.log("its working")
         let thisID = $(this).attr("id");
         $(".animal-card").hide();
         $("." + thisID).show();
