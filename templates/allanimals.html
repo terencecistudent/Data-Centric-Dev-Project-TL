@@ -29,11 +29,11 @@
 				<div class="card mb-3 text-white bg-dark animal-card {{ animal.animal_type }}">
 					<div class="row no-gutters">
 						<div class="col-md-5">
-							<img src="{{ animal.animal_image }}" class="card-img text-center animal-image" alt="{{ animal.animal_name }}">
+							<img src="{{ animal.animal_image }}" class="card-img text-center animal-image border border-white" alt="{{ animal.animal_name }}">
                         </div>
 						<div class="col-md-7">
 							<div class="card-body animal-body-info">
-								<h4 class="card-title text-center">{{ animal.animal_name }}</h4>
+								<h4 class="card-title text-center" id="animals-name-title">{{ animal.animal_name }}</h4>
 								<p class="card-text"><strong>Type:</strong> {{ animal.animal_type }}</p>
 								<p class="card-text"><strong>Scientific Name:</strong> {{ animal.animal_scientific_name }}</p>
 								<p class="card-text"><strong>Diet:</strong> {{ animal.animal_diet }}</p>

@@ -50,6 +50,10 @@ body{
     height: 300px;
 }
 
+.animals-name-title{
+    text-decoration: underline;
+}
+
 
 /*
     jumbotron

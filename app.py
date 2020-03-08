@@ -1,5 +1,5 @@
 import os
-import re
+# import re
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -27,7 +27,13 @@ def home():
 @app.route("/search_animal", methods=["GET", "POST"])
 def search_animal():
     '''import pdb; pdb.set_trace()'''
-    # return render_template("allanimals.html", animals=list(animals))
+    animals_collection = mongo.db.animals
+    # animals = animals_collection.find()
+    animal_search = animals_collection.find({
+        'animal_name': request.form.get('animal_name')
+    })
+    animals_collection.create_index({"animal_name": "text"})
+    animals_collection.find({"$text": {"$search": animal_search}}).sort("animal_name", 1)
 
 
 # main animal page
