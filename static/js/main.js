@@ -5,7 +5,7 @@ $(document).ready(function(){
         let thisID = $(this).attr("id");
         $(".animal-card").hide();
         $("." + thisID).show();
-        $(this).addClass("text-red");
+        $(this).addClass("text-green");
     });
 
     /*
