@@ -17,7 +17,7 @@
         <!--Search input-->
         <div class="row pt-3 pb-3 text-center">
             <div class="col">
-                <form action="{{ url_for('search_animal') }}" method="GET">
+                <form action="{{ url_for('all_animals') }}" method="POST">
                     <input type="search" name="search_animal" id="search_animal" placeholder="Find an animal here...">
                     <button type="submit" class="btn btn-danger" id="search_btn">Search</button>
                 </form>

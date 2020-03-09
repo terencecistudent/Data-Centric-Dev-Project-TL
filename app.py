@@ -24,25 +24,38 @@ def home():
 
 
 # find animal search
-@app.route("/search_animal", methods=["GET", "POST"])
-def search_animal():
-    '''import pdb; pdb.set_trace()'''
-    animals_collection = mongo.db.animals
-    # animals = animals_collection.find()
-    animal_search = animals_collection.find({
-        'animal_name': request.form.get('animal_name')
-    })
-    animals_collection.create_index({"animal_name": "text"})
-    animals_collection.find({"$text": {"$search": animal_search}}).sort("animal_name", 1)
+# @app.route("/search_animal", methods=["GET", "POST"])
+# def search_animal():
+#     '''import pdb; pdb.set_trace()'''
+#     animals_collection = mongo.db.animals
+#     # animals = animals_collection.find()
+#     animal_search = animals_collection.find({
+#         'animal_name': request.form.get('animal_name')
+#     })
+#     animals_collection.create_index({"animal_name": "text"})
+#     animals_collection.find({"$text": {"$search": animal_search}}).sort("animal_name", 1)
 
 
 # main animal page
-@app.route("/all_animals")
+@app.route("/all_animals", methods=["GET", "POST"])
 def all_animals():
-    animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
-    diets = mongo.db.diets.find()
-    return render_template("allanimals.html", animals=list(animals),
-                            diets=list(diets))
+    if request.method == "POST":
+        searchAnimal = request.form.get("search_animal")
+        search_results = mongo.db.animals.find({"$text": {"$search": searchAnimal}}).sort("animal_name", 1)
+        if search_results.count() > 0:
+            diets = mongo.db.diets.find()
+            return render_template("allanimals.html", animals=list(search_results),
+                            diets=list(diets), results_found=True)
+        else:
+            animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
+            diets = mongo.db.diets.find()
+            return render_template("allanimals.html", animals=list(animals),
+                                    diets=list(diets), results_found=False)
+    else:
+        animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
+        diets = mongo.db.diets.find()
+        return render_template("allanimals.html", animals=list(animals),
+                                diets=list(diets), results_found=False)
 
 
 # testing piece of code
