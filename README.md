@@ -77,6 +77,16 @@ https://www.gitpod.io/docs/43_config_ports/
 ![image](https://user-images.githubusercontent.com/48124466/68051467-5aa24000-fcdf-11e9-8666-d29f1afa8955.png)
 
 ### Code Validation Checks
+HTML: https://validator.w3.org/
+- Only errors relate to Flask framework.
+
+CSS: https://jigsaw.w3.org/css-validator/
+- style.css: No errors.
+
+JavaScript : https://codebeautify.org/jsvalidate
+
+
+
 ### Responsive Design Testing and Visuals
 
 
