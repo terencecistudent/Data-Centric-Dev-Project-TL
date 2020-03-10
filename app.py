@@ -1,5 +1,4 @@
 import os
-# import re
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -68,9 +67,9 @@ def testing():
 @app.route("/add_animals")
 def add_animals():
     return render_template("addanimal.html", 
-                            types=mongo.db.types.find(),
+                            types=mongo.db.types.find().sort("animal_type", 1),
                             animals=mongo.db.animals.find(),
-                            diets=mongo.db.diets.find())
+                            diets=mongo.db.diets.find().sort("animal_diet", 1))
 
 
 # insert animals using POST

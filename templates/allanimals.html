@@ -28,7 +28,7 @@
             <!--Section for animal information-->
 			<div class="col-sm-12 col-md-9 col-lg-9 px-3">
 				{% for animal in animals %}
-				<div class="card mb-3 text-white bg-dark animal-card {{ animal.animal_type }}">
+				<div class="card mb-4 text-white bg-dark animal-card {{ animal.animal_type }}">
 					<div class="row no-gutters">
 						<div class="col-md-5">
 							<img src="{{ animal.animal_image }}" class="card-img text-center animal-image border border-white" alt="{{ animal.animal_name }}">
