@@ -1,11 +1,17 @@
 # Animal Adventures
 
 ## Description
-In the website, users are able to view a range of animals, they are able to create new animals with
-specific fields required.  Users can also edit any animal and delete them from the website.  This a
-simple website which will perform the actions above.
+In the website, users are able to search and view a range of animals.  Users are able to create new animals with
+specific fields required.  Users can also edit any animal of their liking and delete them from the website.  
 
-This website is also cross compatible whether the user is using their laptop, iPad or phone.
+I have started this project by creating mockups and wireframes to help give me an idea of how I was going to 
+design the website across all platforms considered, laptops, iPads and mobile devices.  Below is attached my
+mocks and wireframes:
+
+
+## Wireframes
+[Click to open mockups and wireframes.](https://github.com/terencecistudent/Data-Centric-Dev-Project-TL/blob/master/mockups/Mockups.pdf)
+
 
 ## UX
 ### User Stories
@@ -24,14 +30,22 @@ I have also used the Flask framework including jinja templates to also help me c
 For the font used, I have used Roboto from Google Fonts.  I have used this font as it is clear and 
 can be easily read by users.
 
-## Wireframes
-
-....
-
 
 ## Requirements
 - Access to desktop, laptop, table or mobile devices.
 - Internet connection.
+
+
+## Database Schema
+For this project I have selected to work with [MongoDB](https://www.mongodb.com/) which is a non-relational 
+database.  This worked well for me as each document can contain a great deal of information for each animal.
+
+I have used three collections within my database **animals**, **diets** and **types**.
+
+In the animals collection, it contained several fields of data which were displayed on the website.
+
+This is an example of one of the records in this animals collection:
+![image](https://user-images.githubusercontent.com/48124466/76363701-81baef00-631b-11ea-93fd-285b1dceb5c3.png)
 
 
 ## Installing
@@ -62,9 +76,9 @@ Here is the link for instructions: https://www.gitpod.io/
 
 
 ## Testing
-...
-### Running Responsive Designs on Google Chrome:
 
+
+### Running Responsive Designs on Google Chrome:
 Here is a link how to run the application on a live server by configuring and exposing ports with GitPod:
 https://www.gitpod.io/docs/43_config_ports/
 
@@ -89,15 +103,29 @@ JavaScript : https://codebeautify.org/jsvalidate
 ### Responsive Design Testing and Visuals
 
 ## Technologies Used
-- Bootstrap 4
-- jQuery v3.4.1
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
-- Python
-- Flask
+- jQuery
+- Markdown
+    - Used for the README.md file
+- Bootstrap v4.3.1
+    - This framework used in this appplication for:
+        - Navbar
+        - Styling
+        - Responsive Layouts
+        - Buttons
 - MongoDB
-- Jasmine
+    - A document-orientated database which was used for the project.
+- Google Fonts
+    - Help with the visibility of the text for users to see clearly.
+- Git 
+    - Version control to the GitHub repositories.
+    - Ran the code to expose a live port.
+-GitHub
+    - Remote repository.
+- Google Chrome Developer Tools 
+    - Helped with small changes.
 
 
 ## RoadMap
@@ -131,6 +159,9 @@ To contact GitHub, follow this link: https://support.github.com/
 ### Media 
 - I got the background image from a free open sourced website: https://www.pexels.com/.
 - For the uploaded images in my database, I used Wikipedia Commons: https://commons.wikimedia.org/wiki/Main_Page
+
+### Animal Information 
+- Animals facts were researched from [National Geographic - Animals](https://www.nationalgeographic.com/animals/)
 
 ### Authors and Acknowledgment
 - **Autor**: Terence Logue
