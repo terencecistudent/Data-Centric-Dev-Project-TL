@@ -5,72 +5,71 @@ $(document).ready(function(){
         let thisID = $(this).attr("id");
         $(".animal-card").hide();
         $("." + thisID).show();
-        // $(this).addClass("text-green");
     });
 
     /*
         all animals page sub heading include animal type
         side bar nav removes white text for any button not selected
     */
-    $("#Amphibians").click(function(){
+    $("#Amphibians").click(function() {
         $("#animalsTitle").text(" - Amphibians");
-        $("#animal-card").removeClass("text-white");
-        $("#Birds").removeClass("text-white");
-        $("#Fish").removeClass("text-white");
-        $("#Invertebrates").removeClass("text-white");
-        $("#Mammals").removeClass("text-white");
-        $("#Reptiles").removeClass("text-white");
-        $(this).addClass("text-white");
+        $("#animal-card").addClass("text-white").removeClass("text-danger");
+        $("#Birds").addClass("text-white").removeClass("text-danger");
+        $("#Fish").addClass("text-white").removeClass("text-danger");
+        $("#Invertebrates").addClass("text-white").removeClass("text-danger");
+        $("#Mammals").addClass("text-white").removeClass("text-danger");
+        $("#Reptiles").addClass("text-white").removeClass("text-danger");
+        $(this).addClass("text-danger");
     });
-    $("#Birds").click(function(){
+    $("#Birds").click(function() {
         $("#animalsTitle").text(" - Birds");
-        $("#animal-card").removeClass("text-white");
-        $("#Amphibians").removeClass("text-white");
-        $("#Fish").removeClass("text-white");
-        $("#Invertebrates").removeClass("text-white");
-        $("#Mammals").removeClass("text-white");
-        $("#Reptiles").removeClass("text-white");
-        $(this).addClass("text-white");
+        $("#animal-card").addClass("text-white").removeClass("text-danger");
+        $("#Amphibians").addClass("text-white").removeClass("text-danger");
+        $("#Fish").addClass("text-white").removeClass("text-danger");
+        $("#Invertebrates").addClass("text-white").removeClass("text-danger");
+        $("#Mammals").addClass("text-white").removeClass("text-danger");
+        $("#Reptiles").addClass("text-white").removeClass("text-danger");
+        $(this).addClass("text-danger");
     });
-    $("#Fish").click(function(){
+    $("#Fish").click(function() {
         $("#animalsTitle").text(" - Fish");
-        $("#animal-card").removeClass("text-white");
-        $("#Amphibians").removeClass("text-white");
-        $("#Birds").removeClass("text-white");
-        $("#Invertebrates").removeClass("text-white");
-        $("#Mammals").removeClass("text-white");
-        $("#Reptiles").removeClass("text-white");
-        $(this).addClass("text-white");
+        $("#animal-card").addClass("text-white").removeClass("text-danger");
+        $("#Amphibians").addClass("text-white").removeClass("text-danger");
+        $("#Birds").addClass("text-white").removeClass("text-danger");
+        $("#Invertebrates").addClass("text-white").removeClass("text-danger");
+        $("#Mammals").addClass("text-white").removeClass("text-danger");
+        $("#Reptiles").addClass("text-white").removeClass("text-danger");
+        $(this).addClass("text-danger");
     });
-    $("#Invertebrates").click(function(){
+    $("#Invertebrates").click(function() {
         $("#animalsTitle").text(" - Invertebrates");
-        $("#animal-card").removeClass("text-white");
-        $("#Amphibians").removeClass("text-white");
-        $("#Birds").removeClass("text-white");
-        $("#Fish").removeClass("text-white");
-        $("#Mammals").removeClass("text-white");
-        $("#Reptiles").removeClass("text-white");
-        $(this).addClass("text-white");
+        $("#animal-card").addClass("text-white").removeClass("text-danger");
+        $("#Amphibians").addClass("text-white").removeClass("text-danger");
+        $("#Birds").addClass("text-white").removeClass("text-danger");
+        $("#Fish").addClass("text-white").removeClass("text-danger");
+        $("#Mammals").addClass("text-white").removeClass("text-danger");
+        $("#Reptiles").addClass("text-white").removeClass("text-danger");
+        $(this).addClass("text-danger");
     });
-    $("#Mammals").click(function(){
+    $("#Mammals").click(function() {
         $("#animalsTitle").text(" - Mammals");
-        $("#animal-card").removeClass("text-white");
-        $("#Amphibians").removeClass("text-white");
-        $("#Birds").removeClass("text-white");
-        $("#Fish").removeClass("text-white");
-        $("#Invertebrates").removeClass("text-white");
-        $("#Reptiles").removeClass("text-white");
-        $(this).addClass("text-white");
+        $("#animal-card").addClass("text-white").removeClass("text-danger");
+        $("#Amphibians").addClass("text-white").removeClass("text-danger");
+        $("#Birds").addClass("text-white").removeClass("text-danger");
+        $("#Fish").addClass("text-white").removeClass("text-danger");
+        $("#Invertebrates").addClass("text-white").removeClass("text-danger");
+        $("#Reptiles").addClass("text-white").removeClass("text-danger");
+        $(this).addClass("text-danger");
     });
-    $("#Reptiles").click(function(){
+    $("#Reptiles").click(function() {
         $("#animalsTitle").text(" - Reptiles");
-        $("#animal-card").removeClass("text-white");
-        $("#Amphibians").removeClass("text-white");
-        $("#Birds").removeClass("text-white");
-        $("#Fish").removeClass("text-white");
-        $("#Invertebrates").removeClass("text-white");
-        $("#Mammals").removeClass("text-white");
-        $(this).addClass("text-white");
+        $("#animal-card").addClass("text-white").removeClass("text-danger");
+        $("#Amphibians").addClass("text-white").removeClass("text-danger");
+        $("#Birds").addClass("text-white").removeClass("text-danger");
+        $("#Fish").addClass("text-white").removeClass("text-danger");
+        $("#Invertebrates").addClass("text-white").removeClass("text-danger");
+        $("#Mammals").addClass("text-white").removeClass("text-danger");
+        $(this).addClass("text-danger");
     });
 
 });

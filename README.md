@@ -84,11 +84,9 @@ CSS: https://jigsaw.w3.org/css-validator/
 - style.css: No errors.
 
 JavaScript : https://codebeautify.org/jsvalidate
-
-
+- main.js: Warnings.
 
 ### Responsive Design Testing and Visuals
-
 
 ## Technologies Used
 - Bootstrap 4
