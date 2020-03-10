@@ -12,16 +12,6 @@ $(document).ready(function(){
         all animals page sub heading include animal type
         side bar nav removes white text for any button not selected
     */
-    // $("#animal-card").click(function(){
-    //     $("#animalsTitle").text(" - All Types");
-    //     $("#Amphibians").removeClass("text-white");
-    //     $("#Birds").removeClass("text-white");
-    //     $("#Fish").removeClass("text-white");
-    //     $("#Invertebrates").removeClass("text-white");
-    //     $("#Mammals").removeClass("text-white");
-    //     $("#Reptiles").removeClass("text-white");
-    //     $(this).addClass("text-white");
-    // });
     $("#Amphibians").click(function(){
         $("#animalsTitle").text(" - Amphibians");
         $("#animal-card").removeClass("text-white");

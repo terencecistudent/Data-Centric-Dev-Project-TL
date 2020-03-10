@@ -22,19 +22,6 @@ def home():
                             diets=mongo.db.diets.find().sort("animal_diet", 1))
 
 
-# find animal search
-# @app.route("/search_animal", methods=["GET", "POST"])
-# def search_animal():
-#     '''import pdb; pdb.set_trace()'''
-#     animals_collection = mongo.db.animals
-#     # animals = animals_collection.find()
-#     animal_search = animals_collection.find({
-#         'animal_name': request.form.get('animal_name')
-#     })
-#     animals_collection.create_index({"animal_name": "text"})
-#     animals_collection.find({"$text": {"$search": animal_search}}).sort("animal_name", 1)
-
-
 # main animal page
 @app.route("/all_animals", methods=["GET", "POST"])
 def all_animals():
