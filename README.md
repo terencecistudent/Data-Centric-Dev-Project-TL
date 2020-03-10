@@ -19,7 +19,7 @@ mocks and wireframes:
 - As a user, I would like to save my favourite animals in a separate section called Favourites.
 - As a user, I would like to see some statistic or graphs relating to the data in the website.
 - As a user, I would like to search for animal or key word which will bring up the animal(s).
-
+#
 
 ## Framework
 I have chosen to use Bootstrap 4 for the design and layout of my website.  Bootstrap is simple, 
@@ -34,6 +34,7 @@ can be easily read by users.
 ## Requirements
 - Access to desktop, laptop, table or mobile devices.
 - Internet connection.
+#
 
 
 ## Database Schema
@@ -45,7 +46,18 @@ I have used three collections within my database **animals**, **diets** and **ty
 In the animals collection, it contained several fields of data which were displayed on the website.
 
 This is an example of one of the records in this animals collection:
+
 ![image](https://user-images.githubusercontent.com/48124466/76363701-81baef00-631b-11ea-93fd-285b1dceb5c3.png)
+#
+
+
+## Deployment:
+Live link: [Animal Adventures](https://data-centric-dev-proj-tl.herokuapp.com/)
+
+This application was deployed using Heroku which can be viewed from above.
+
+
+#
 
 
 ## Installing
@@ -54,6 +66,7 @@ Software used to complete this game: **GitPod**
 First go to GitHub: https://github.com/
 1. Sign In or Sign Up to GitHub.
 2. Once signed in, go to the left side of the screen and you will see:
+
 ![image](https://user-images.githubusercontent.com/48124466/68049737-89b6b280-fcdb-11e9-9e41-e02d4dc6fa9a.png)
 
 3. Click **New**.
@@ -73,9 +86,39 @@ URL Prefix:
 Browser Extension
 GitHub App
 Here is the link for instructions: https://www.gitpod.io/
+#
 
 
 ## Testing
+### Jasmine Tests:
+I have conducted tests using Jasmine Testing Framework [click here](https://github.com/terencecistudent/Data-Centric-Dev-Project-TL/tree/master/testing), 
+such tests involve:
+
+1. Selecting the animal types should return the matching animals:
+
+![image](https://user-images.githubusercontent.com/48124466/76366166-1bd16600-6321-11ea-858a-6594ffe99194.png)
+
+2. When the Edit button is clicked, users should be brought to the Edit Animal page:
+
+![image](https://user-images.githubusercontent.com/48124466/76366224-54713f80-6321-11ea-969f-7eeb84647d74.png)
+
+3. When a user enters an animal which is in the database, those searched animals will appear:
+
+![image](https://user-images.githubusercontent.com/48124466/76366353-aade7e00-6321-11ea-848e-1e52e3622a99.png)
+
+4. When user enters an animal which is **not** in the database, all animals should show:
+
+![image](https://user-images.githubusercontent.com/48124466/76366460-f6912780-6321-11ea-9277-afd84f054fe9.png)
+
+5. When the user clicked the Delete button, the selected animal will be deleted from the database:
+
+![image](https://user-images.githubusercontent.com/48124466/76366541-335d1e80-6322-11ea-990c-2fa717343d2b.png)
+
+
+### Manual Tests:
+I have also carried out manual tests which show the CRUD operations in use.
+
+[Manual Tests](https://github.com/terencecistudent/Data-Centric-Dev-Project-TL/blob/master/testing/Manual%20Tests.pdf)
 
 
 ### Running Responsive Designs on Google Chrome:
@@ -84,11 +127,14 @@ https://www.gitpod.io/docs/43_config_ports/
 
 **To view responsive applications:**
 1. Right click then go to **Inspect Element**
-2. Click on the **Toggle Device Toolbar** (Icons showing two devices).
+2. Click on the **Toggle Device Toolbar** (Icons showing two devices):
+
 ![image](https://user-images.githubusercontent.com/48124466/68051275-f2ebf500-fcde-11e9-8b3a-adc7abc16c5f.png)
 
 3. Click on any device, for example, iPhone 5/SE selected:
+
 ![image](https://user-images.githubusercontent.com/48124466/68051467-5aa24000-fcdf-11e9-8666-d29f1afa8955.png)
+
 
 ### Code Validation Checks
 HTML: https://validator.w3.org/
@@ -100,7 +146,13 @@ CSS: https://jigsaw.w3.org/css-validator/
 JavaScript : https://codebeautify.org/jsvalidate
 - main.js: Warnings.
 
+
 ### Responsive Design Testing and Visuals
+I have tested the responsiveness of this application using Google Chrome.  I have tested it over different 
+phones (Portrait and Landscape), iPad and iPad Pro (Portrait and Landscape) and on the laptop view.
+
+[Reponsive Platform Tests Here](https://github.com/terencecistudent/Data-Centric-Dev-Project-TL/blob/master/testing/Responsiveness%20On%20Different%20Devices.pdf)
+#
 
 ## Technologies Used
 - HTML5
@@ -126,18 +178,21 @@ JavaScript : https://codebeautify.org/jsvalidate
     - Remote repository.
 - Google Chrome Developer Tools 
     - Helped with small changes.
+#
 
 
 ## RoadMap
 In the future, I would like to implement:
 - A register and login form for users.
 - SVG graphs containing information regarding the database.
+#
 
 
 ## Cloning and Pushing To The Respository
 ### Cloning 
 - Here is a link how to clone a repository: 
 https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
+#
 
 
 ### Pushing To The Respository
@@ -153,6 +208,7 @@ https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cl
 
 ## Support
 To contact GitHub, follow this link: https://support.github.com/
+#
 
 
 ## Credits
