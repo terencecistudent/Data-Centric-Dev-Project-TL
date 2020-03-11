@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from pymongo import collection
 if os.path.exists("env.py"):
     import env
 
@@ -18,7 +17,8 @@ DBS_NAME = "animal_facts"
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("index.html", animals=mongo.db.animals.find().sort("animal_name", 1),
+    return render_template("index.html", 
+                            animals=mongo.db.animals.find().sort("animal_name", 1),
                             diets=mongo.db.diets.find().sort("animal_diet", 1))
 
 
@@ -30,21 +30,24 @@ def all_animals():
         search_results = mongo.db.animals.find({"$text": {"$search": searchAnimal}}).sort("animal_name", 1)
         if search_results.count() > 0:
             diets = mongo.db.diets.find()
-            return render_template("allanimals.html", animals=list(search_results),
-                            diets=list(diets), results_found=True)
+            return render_template("allanimals.html", 
+                                    animals=list(search_results),
+                                    diets=list(diets), results_found=True)
         else:
-            animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
+            animals = mongo.db.animals.find().sort([("animal_type", 1), 
+                                                    ("animal_name", 1)])
             diets = mongo.db.diets.find()
             return render_template("allanimals.html", animals=list(animals),
                                     diets=list(diets), results_found=False)
     else:
-        animals = mongo.db.animals.find().sort([("animal_type", 1), ("animal_name", 1)])
+        animals = mongo.db.animals.find().sort([("animal_type", 1), 
+                                                ("animal_name", 1)])
         diets = mongo.db.diets.find()
         return render_template("allanimals.html", animals=list(animals),
                                 diets=list(diets), results_found=False)
 
 
-# testing piece of code
+# testing piece of code only - testing.html
 @app.route("/testing")
 def testing():
     return render_template("testing.html")
@@ -110,7 +113,8 @@ def species_find():
     print(a)
     mongo.db.animals.find()
     return render_template("animalbyspecies.html",
-                            animals=mongo.db.animals.find().sort([("animal_species", 1), ("animal_name", 1)]))
+                            animals=mongo.db.animals.find().sort([
+                                ("animal_species", 1), ("animal_name", 1)]))
 
 
 if __name__ == "__main__":
