@@ -125,6 +125,7 @@ This is an example of one of the records in this animals collection:
 
 
 ### Connecting MongoDB to GitPod:
+#### Mongo Shell
 1. Overview > CONNECT:
 
 ![image](https://user-images.githubusercontent.com/48124466/76410910-a26d5e00-6388-11ea-88a9-d545f7a1be05.png)
@@ -134,6 +135,24 @@ This is an example of one of the records in this animals collection:
 ![image](https://user-images.githubusercontent.com/48124466/76411017-d3e62980-6388-11ea-949f-444862105c7f.png)
 
 - Copy number 3 into GitPod's command line.
+
+#### Connection String
+1. Overview > CONNECT:
+
+![image](https://user-images.githubusercontent.com/48124466/76410910-a26d5e00-6388-11ea-88a9-d545f7a1be05.png)
+
+2. Click **Connect your application**
+
+![image](https://user-images.githubusercontent.com/48124466/76456366-c81d5600-63ce-11ea-8453-9dabd0fdeb45.png)
+
+3. In GitPod, create a file called **env.py**, inside that file:
+- 'import os'
+
+![image](https://user-images.githubusercontent.com/48124466/76456589-1d596780-63cf-11ea-851a-ea24c1d8c0fd.png)
+
+4. In app.py:
+
+![image](https://user-images.githubusercontent.com/48124466/76456665-3d892680-63cf-11ea-897a-9d8446e56b78.png)
 #
 
 
@@ -159,11 +178,12 @@ There are no differences between the website's development version and the deplo
 6. In the CLI, login into Heroku by **heroku login -i**, where you will be asked to your enter email address and
     password.
 7. If you have already created your Heroku app, you can remote to your local repository with the heroku git:remote command.
-8. To deploy your app to Heroku, use the git push command to push the code from your local repository’s master branch to 
+8. Set debug=False for deployment.
+9. To deploy your app to Heroku, use the git push command to push the code from your local repository’s master branch to 
     your heroku remote:
 
     ![image](https://user-images.githubusercontent.com/48124466/76408974-ae0b5580-6385-11ea-9cf1-8d67c4f0dff5.png)
-9. When the build is complete, on the Heroku website, in the app click **Open App**.
+10. When the build is complete, on the Heroku website, in the app click **Open App**.
 
 [Deploying with Git](https://devcenter.heroku.com/articles/git)
 #
