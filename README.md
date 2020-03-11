@@ -25,7 +25,7 @@ mocks and wireframes:
 2. As a user, I would like to be able to view all of the animals on a page when I click **View Animals**.
     - **End User Goal**: User selects View Animals in navbar resulting in all of the animals showing.
     - **End Business Goal**: Navbar **View Animals** link working and all of animals being displayed for user.
-    - **Acceptance Criteria**: When View Animals is clicked, all the animals in the database is displayed.
+    - **Acceptance Criteria**: When View Animals is clicked, all the animals in the database are displayed.
     - **Measurement Of Success**: Check Responsiveness On Different Devices document and test with Heroku live link.
 
 3. As a user, I would like to select an animal type e.g. Mammals, which will show all of the Mammals, as 
@@ -265,6 +265,7 @@ Click below to see tests:
 [Reponsive Platform Tests Here](https://github.com/terencecistudent/Data-Centric-Dev-Project-TL/blob/master/testing/Responsiveness%20On%20Different%20Devices.pdf)
 #
 
+
 ## Technologies Used
 - HTML5
 - CSS3
@@ -281,11 +282,11 @@ Click below to see tests:
 - MongoDB
     - A document-orientated database which was used for the project.
 - Google Fonts
-    - Help with the visibility of the text for users to see clearly.
+    - Helped with the visibility of the text for users to see clearly.
 - Git 
     - Version control to the GitHub repositories.
     - Ran the code to expose a live port.
--GitHub
+- GitHub
     - Remote repository.
 - Google Chrome Developer Tools 
     - Helped with small changes.
@@ -306,7 +307,6 @@ In the future, I would like to implement:
 https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
 #
 
-
 ### Pushing To The Respository:
 - To add, commit and push files to the repository, e.g. index.html, open a New Terminal and type:
 1. git add index.html
@@ -317,6 +317,8 @@ https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cl
 1. Create a branch: git checkout -b new-branch-name
 2. Edit, add to your application and commit the files.
 3. Push the branch to the remote repository: git push origin new-branch-name.
+#
+
 
 ## Support
 To contact GitHub, follow this link: https://support.github.com/
